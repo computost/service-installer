@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceInstaller", "Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceInstaller.Tests", "ServiceInstaller.Tests\ServiceInstaller.Tests.csproj", "{A237FD15-7B9F-4245-9BA7-C31955B907CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceInstaller.HelloWorld", "ServiceInstaller.HelloWorld\ServiceInstaller.HelloWorld.csproj", "{3B2DAB58-F5BA-44D7-AF53-2C0F9E5CAB52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A237FD15-7B9F-4245-9BA7-C31955B907CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A237FD15-7B9F-4245-9BA7-C31955B907CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A237FD15-7B9F-4245-9BA7-C31955B907CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B2DAB58-F5BA-44D7-AF53-2C0F9E5CAB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B2DAB58-F5BA-44D7-AF53-2C0F9E5CAB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B2DAB58-F5BA-44D7-AF53-2C0F9E5CAB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B2DAB58-F5BA-44D7-AF53-2C0F9E5CAB52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
