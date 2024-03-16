@@ -1,3 +1,4 @@
+using System.Reflection;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
 
@@ -8,17 +9,18 @@ public class Tests
     private IContainer _container;
 
     [SetUp]
-    public void Setup()
+    public async Task Setup()
     {
         _container = new ContainerBuilder()
-            // Set the image for the container to "testcontainers/helloworld:1.1.0".
             .WithImage("mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2016")
+            .WithResourceMapping(new FileInfo("Service Installer.msi"), ".")
             // Bind port 8080 of the container to a random port on the host.
             //.WithPortBinding(8080, true)
             // Wait until the HTTP endpoint of the container is available.
             //.WithWaitStrategy(Wait.ForUnixContainer().UntilHttpRequestIsSucceeded(r => r.ForPort(8080)))
             // Build the container configuration.
             .Build();
+        await _container.StartAsync();
     }
 
     [TearDown]
@@ -28,8 +30,8 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public async Task InstallService()
     {
-        Assert.Pass();
+        var result = await _container.ExecAsync(new[] { "msiexec", "/i", "Service Installer.msi", "/quiet" });
     }
 }
